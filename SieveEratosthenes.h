@@ -1,16 +1,18 @@
 #pragma once
+#pragma once
+
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-class SieveAtkin
+class SieveEratosthenes
 {
 
 public:
 
-	SieveAtkin();
-	~SieveAtkin();
+	SieveEratosthenes();
+	~SieveEratosthenes();
 	void Base(int LimitNumber);
 	void Print(vector<bool> prime, int LimitNumber);
 };

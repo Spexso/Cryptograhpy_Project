@@ -3,32 +3,64 @@
 
 #include <iostream>
 #include <string>
+#include <chrono>
 #include "Helpers.h"
 #include "MillerRabin.h"
+#include "SieveAtkin.h"
+#include "SieveEratosthenes.h"
 
 using String = std::string;
 using namespace std;
 
 void EasyPrint(String Text);
+void Menu();
 
 
 int main()
 {
+	int opt = 0;
+	int SelectedNumber = 0;
+
 	int32_t test[4] = { 2, 4, 12, 55 };
-	MillerRabin* Testf = new MillerRabin();
+	MillerRabin* MillerRabinAlgorithm = new MillerRabin();
+	SieveAtkin* SieveOfAtkinAlgorithm = new SieveAtkin();
+	SieveEratosthenes* SieveOfEratosthenesAlgorithm = new SieveEratosthenes();
 
+	// Input: Enter your Number
+	//EasyPrint("Enter the Number: ");
+	//cin >> SelectedNumber;
 
-	for (int32_t ins : test)
+	// Input: Ask for user's Option
+
+	while (opt != -1)
 	{
-		if (ins == 22.f)
+		EasyPrint("\n");
+		EasyPrint("\n");
+
+		EasyPrint("Enter the Number: ");
+		cin >> SelectedNumber;
+
+		EasyPrint("\n");
+
+		Menu();
+		EasyPrint("Select your Algorithm: ");
+		cin >> opt;
+
+		switch (opt)
 		{
-			EasyPrint("test");
-			
-		}
-		else
-		{
-			EasyPrint("Test2");
-			EasyPrint(BoolToString(Testf->IsPrime(1, 2)));
+		case 1:
+			MillerRabinAlgorithm->Print(SelectedNumber);
+			break;
+		case 2:
+			SieveOfAtkinAlgorithm->Base(SelectedNumber);
+			break;
+		case 3:
+			SieveOfEratosthenesAlgorithm->Base(SelectedNumber);
+			break;
+
+		default:
+			opt = -1;
+			break;
 		}
 	}
 }
@@ -38,6 +70,16 @@ void EasyPrint(String Text)
 	cout << Text << "\n";
 
 	return;
+}
+
+
+void Menu()
+{
+	EasyPrint("\n");
+	EasyPrint("1- Miller Rabin");
+	EasyPrint("2- Sieve of Atkin");
+	EasyPrint("3- Sieve of Eratosthenes");
+	EasyPrint("\n");
 }
 
 
