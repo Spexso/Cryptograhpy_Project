@@ -49,15 +49,54 @@ int main()
 		switch (opt)
 		{
 		case 1:
+		{
+			// Record start time
+			auto start = chrono::high_resolution_clock::now();
+
 			MillerRabinAlgorithm->Print(SelectedNumber);
+
+			// Record end time
+			auto end = chrono::high_resolution_clock::now();
+			// Calculate duration
+			chrono::duration<double> elapsed = end - start;
+
+			// Output the elapsed time
+			cout << "Elapsed time: " << elapsed.count() << " seconds" << endl;
 			break;
+		}
 		case 2:
+		{
+			// Record start time
+			auto start1 = chrono::high_resolution_clock::now();
+
 			SieveOfAtkinAlgorithm->Base(SelectedNumber);
-			break;
-		case 3:
-			SieveOfEratosthenesAlgorithm->Base(SelectedNumber);
+
+			// Record end time
+			auto end1 = chrono::high_resolution_clock::now();
+			// Calculate duration
+			chrono::duration<double> elapsed1 = end1 - start1;
+
+			// Output the elapsed time
+			cout << "Elapsed time: " << elapsed1.count() << " seconds" << endl;
 			break;
 
+		}
+		case 3:
+		{
+			// Record start time
+			auto start2 = chrono::high_resolution_clock::now();
+
+			SieveOfEratosthenesAlgorithm->Base(SelectedNumber);
+
+			// Record end time
+			auto end2 = chrono::high_resolution_clock::now();
+			// Calculate duration
+			chrono::duration<double> elapsed2 = end2 - start2;
+
+			// Output the elapsed time
+			cout << "Elapsed time: " << elapsed2.count() << " seconds" << endl;
+			break;
+		}
 		default:
 			opt = -1;
 			break;
@@ -79,6 +118,7 @@ void Menu()
 	EasyPrint("1- Miller Rabin");
 	EasyPrint("2- Sieve of Atkin");
 	EasyPrint("3- Sieve of Eratosthenes");
+	EasyPrint("Any other number is Exit");
 	EasyPrint("\n");
 }
 
