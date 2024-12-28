@@ -63,7 +63,7 @@ void SieveAtkin::Print(vector<bool> prime, int LimitNumber)
 	for (int i = 2; i <= LimitNumber; i++)
 	{
 		if (prime[i])
-			cout << i << " ";
+			cout << "-" << i << endl;
 	}
 
 	cout << "\n";

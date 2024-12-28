@@ -88,7 +88,7 @@ void MillerRabin::Print(int LimitNumber)
 	for (int n = 1; n < LimitNumber; n++)
 	{
 		if (IsPrime(n, k))
-			cout << n << " ";
+			cout << "-" << n << endl;
 	}
 
 	cout << "\n";

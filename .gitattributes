@@ -6,6 +6,8 @@
 *.userosscache
 *.sln.docstates
 
+LargePri.fa058954/
+
 # Ignore build directories
 Debug/
 Release/
