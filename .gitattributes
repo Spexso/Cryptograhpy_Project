@@ -1,2 +1,18 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build directories
+Debug/
+Release/
+
+# Ignore NPM packages if using Node.js
+node_modules/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
